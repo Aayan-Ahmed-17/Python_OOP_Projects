@@ -15,8 +15,18 @@ class EmployeesManager():
         age = input("Enter Employee age: ")
         salary = input("Enter Employee salary: ")
         self.employees.append(Employee(name, age, salary))
+        
+    #Read Employees (All Employees)
+    def get_employees(self):
+        if not len(self.employees):
+            print("No employee data")
+            return
+        
+        for emp in self.employees:
+            print(emp)
+            return
     
 """Test case"""
 emp1 = EmployeesManager()
-emp1.create_employee()
-print(emp1.employees[0])
+emp1.get_employees()
+# print(emp1.employees[0])
