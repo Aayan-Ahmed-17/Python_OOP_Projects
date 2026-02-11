@@ -42,6 +42,14 @@ class EmployeesManager:
                 return emp
 
         return f"Employee {name} not found"
+    
+    def delete_one_employee(self, name):
+        for emp in self.employees:
+            if emp["name"] == name:
+                del emp
+                return f"Employee {name} deleted"
+            
+        return f"Employee {name} not found"
 
 
 """Test case"""
