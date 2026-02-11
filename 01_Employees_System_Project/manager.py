@@ -1,4 +1,4 @@
-from Employee import Employee
+from models import Employee
 
 """
 This file manages CRUD operation of Employee()
@@ -17,7 +17,6 @@ class EmployeesManager:
         emp = Employee(name, age, salary)
         self.employees.append(emp)
         return emp
-            
 
     # Read Employees (Get All by condition or without)
     def get_employees(self, filter_by=None):
@@ -32,7 +31,17 @@ class EmployeesManager:
                 if emp["name"] == filter_by or emp["salary"] == filter_by
             ]
 
+        # if filter_by is None
         return [emp for emp in self.employees]
+
+    # update employee salary by name filter
+    def update_employee_salary(self, name, new_salary):
+        for emp in self.employees:
+            if emp["name"] == name:
+                emp["salary"] = int(new_salary)
+                return emp
+
+        return f"Employee {name} not found"
 
 
 """Test case"""
