@@ -4,8 +4,8 @@
 class Employee:
     def __init__(self, name, age, salary):
         self.name = name
-        self.age = age
-        self.salary = salary
+        self.age = int(age)
+        self.salary = int(salary)
         
     def __str__(self):
         return f"Employee {self.name} is {self.age} yrs old having {self.salary} salary"
