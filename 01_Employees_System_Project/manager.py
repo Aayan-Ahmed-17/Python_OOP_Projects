@@ -5,9 +5,13 @@ This file manages CRUD operation of Employee()
 """
 
 
-class EmployeesManager:
+class EmployeeManager:
     def __init__(self):
-        self.employees = []
+        self.employees = [
+            {"name": "aayan ahmed", "age": 19, "salary": 40000},
+            {"name": "aayan", "age": 21, "salary": 300000},
+            {"name": "ahmed", "age": 25, "salary": 1800000},
+        ]
 
     def add_employee(self, name, age, salary):
         """
@@ -28,7 +32,7 @@ class EmployeesManager:
             return [
                 emp
                 for emp in self.employees
-                if emp["name"] == filter_by or emp["salary"] == filter_by
+                if emp.name == filter_by or emp.salary == filter_by
             ]
 
         # if filter_by is None
@@ -42,17 +46,17 @@ class EmployeesManager:
                 return emp
 
         return f"Employee {name} not found"
-    
+
     def delete_one_employee(self, name):
         for emp in self.employees:
             if emp["name"] == name:
                 del emp
                 return f"Employee {name} deleted"
-            
+
         return f"Employee {name} not found"
 
 
 """Test case"""
-emp1 = EmployeesManager()
-print(emp1.add_employee())
-# print(emp1.employees[0])
+# emp1 = EmployeesManager()
+# print(emp1.add_employee())
+# # print(emp1.employees[0])
