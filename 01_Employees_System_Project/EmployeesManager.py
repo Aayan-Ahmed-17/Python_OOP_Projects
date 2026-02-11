@@ -26,6 +26,16 @@ class EmployeesManager():
             print(emp)
             return
     
+    #Update employee (Replace one only)
+    def update_employee(self):
+        name = input("Find Employee by name: ")
+        updated_name = input("Enter updated name: ")
+        updated_age = input("Enter updated age: ")
+        updated_salary= input("Enter updated salary: ")
+        update_logic = [emp =  for emp in self.employees if emp["name"] == name]
+        update_logic = [num for num in range(10) if num > 2]
+    
+    
 """Test case"""
 emp1 = EmployeesManager()
 emp1.get_employees()
