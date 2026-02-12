@@ -1,4 +1,5 @@
 from manager import EmployeeManager
+from utils import input_str_val, input_int_val
 
 class Interface():
     def __init__(self):
@@ -27,21 +28,21 @@ class Interface():
 
             match int(input_action):
                 case 1:
-                    name = input("Enter Employee Name:")
-                    age = int(input("Enter Employee Age:"))
-                    salary = int(input("Enter Employee Salary:"))
+                    name = input_str_val()
+                    age = input_int_val("age")
+                    salary = input_int_val("salary")
                     result = self.EmployeeManager.add_employee(name=name, age=age, salary=salary)
                     print(result)
                 case 2:
                     result = self.EmployeeManager.get_employees()
                     print(result)
                 case 3:
-                    name = input("Enter Employee name: ")
+                    name = input_str_val()
                     result = self.EmployeeManager.get_one_employee(name)
                     print(result)
                 case 4:
-                    name = input("Enter Employee name: ")
-                    new_salary = int(input("Enter Employee new_salary: "))
+                    name = input_str_val()
+                    new_salary = input_int_val("new_salary")
                     result = self.EmployeeManager.update_salary(name=name, new_salary=new_salary)
                     print(result)
                 case 5:
