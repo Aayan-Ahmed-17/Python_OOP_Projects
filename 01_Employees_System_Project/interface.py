@@ -1,17 +1,15 @@
 from manager import EmployeeManager
 
-def run():
-    manager = EmployeeManager()
 
-    # Create
-    emp = manager.add_employee("Aayan", 22, 40000)
-    print(emp)
+def print_menu():
+    return [
+        "1. Add Employee",
+        "2. See Employees",
+        "3. Search first Employee by 'name'",
+        "4. Update employee salary by 'name'",
+        "5. Delete employee by 'name'",
+    ]
 
-    # Update
-    # updated_emp = manager.update_employee_salary("Aayan", 50000)
-    # print(updated_emp)
 
-    # List
-    print(manager.get_employees())
-    
-run()
+print("\nPerform actions: ")
+print('\n'.join(print_menu()))
