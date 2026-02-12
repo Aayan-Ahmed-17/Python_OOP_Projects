@@ -2,21 +2,20 @@ def input_str_val():
     return input("Enter Employee Name: ").strip().lower()
 
 
-def input_int_val(variable):
+def input_int_val(msg):
     while True:
-        valid_int_inp = input(f"Enter Employee {variable}: ")
+        valid_int_inp = input(msg)
 
-        if not valid_int_inp.isdecimal():
-            print("Invalid input value. Please enter numbers only.")
+        if not valid_int_inp.isdigit():
+            print("\nInvalid input value. Please enter numbers only.")
             continue
 
         return int(valid_int_inp)
-    
+
+
 def show_result_list(result_list):
     if not result_list:
-        print("No employees found.")
+        print("\nNo employees found.")
     else:
         for emp in result_list:
-            print(emp)
-        
-        
+            print("\n".join(emp))
