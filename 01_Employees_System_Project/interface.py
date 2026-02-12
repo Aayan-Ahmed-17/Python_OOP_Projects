@@ -56,6 +56,3 @@ class Interface:
                 case 6:
                     break
 
-
-running = Interface()
-running.run()
