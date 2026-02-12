@@ -1,6 +1,3 @@
-""" """
-
-
 class Employee:
     def __init__(self, name, age, salary):
         self.name = name
@@ -13,7 +10,3 @@ class Employee:
     def __str__(self):
         return f"{self.name} | {self.age} yrs | Rs {self.salary}"
 
-
-"""Test case"""
-# emp1 = Employee("Aayan Ahmed", 19, 200000)
-# print(emp1)

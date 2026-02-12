@@ -1,10 +1,8 @@
 from models import Employee
 
 """
-This file manages CRUD operation of Employee()
+This file manages CRUD operations of Employee()
 """
-
-
 class EmployeeManager:
     def __init__(self):
         self.employees = [
