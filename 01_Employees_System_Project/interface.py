@@ -1,5 +1,5 @@
 from manager import EmployeeManager
-from utils import input_str_val, input_int_val
+from utils import input_str_val, input_int_val, show_result_list
 
 class Interface():
     def __init__(self):
@@ -32,26 +32,26 @@ class Interface():
                     age = input_int_val("age")
                     salary = input_int_val("salary")
                     result = self.EmployeeManager.add_employee(name=name, age=age, salary=salary)
-                    print(result)
+                    show_result_list(result)
                 case 2:
                     result = self.EmployeeManager.get_employees()
-                    print(result)
+                    show_result_list(result)
                 case 3:
                     name = input_str_val()
                     result = self.EmployeeManager.get_one_employee(name)
-                    print(result)
+                    show_result_list(result)
                 case 4:
                     name = input_str_val()
                     new_salary = input_int_val("new_salary")
                     result = self.EmployeeManager.update_salary(name=name, new_salary=new_salary)
-                    print(result)
+                    show_result_list(result)
                 case 5:
                     name = input("Enter Employee name: ")
                     result = self.EmployeeManager.delete_employee(name=name)
-                    print(result)
+                    show_result_list(result)
                 case 6:
                     break
-                # end
+                
 
 
 running = Interface()

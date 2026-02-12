@@ -1,11 +1,11 @@
 from models import Employee
 
-"""
-This file manages CRUD operations of Employee()
-"""
-
 
 class EmployeeManager:
+    """
+    This file manages CRUD operations of Employee()
+    """
+
     def __init__(self):
         self.employees = []
 
@@ -32,22 +32,22 @@ class EmployeeManager:
     def get_one_employee(self, name):
         """
         PURPOSE: Get all employees with or without "filter_by"
-        RETURN: [], [emp], []
+        RETURN: [], [emp], [f"Employee {name} not found"]
         """
         if not self.employees:
             return []
 
         for emp in self.employees:
-            if emp["name"] == name:
+            if emp.name == name:
                 return [emp]
 
-        return []
+        return [f"Employee {name.title()} not found"]
 
     # update employee salary by name filter
     def update_salary(self, name, new_salary):
         """
         PURPOSE: Update employee salary through name filter
-        RETURN: [], [emp], [] #for not found
+        RETURN: [], [emp], [f"Employee {name} not found"]
         """
         if not self.employees:
             return []
@@ -57,12 +57,12 @@ class EmployeeManager:
                 emp.salary = int(new_salary)
                 return [emp]
 
-        return f"Employee {name} not found"
+        return [f"Employee {name.title()} not found"]
 
     def delete_employee(self, name):
         """
         PURPOSE: delete employee through name filter
-        RETURN: [], [emp], [] #for not found
+        RETURN: [], [emp], [f"Employee {name} not found"]
         """
         if not self.employees:
             return []
@@ -72,4 +72,4 @@ class EmployeeManager:
                 self.employees.remove(emp)
                 return [emp]
 
-        return []
+        return [f"Employee {name.title()} not found"]

@@ -11,3 +11,12 @@ def input_int_val(variable):
             continue
 
         return int(valid_int_inp)
+    
+def show_result_list(result_list):
+    if not result_list:
+        print("No employees found.")
+    else:
+        for emp in result_list:
+            print(emp)
+        
+        
