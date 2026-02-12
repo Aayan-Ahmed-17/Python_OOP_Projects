@@ -27,19 +27,27 @@ class Interface():
 
             match int(input_action):
                 case 1:
-                    name = input("Enter Employee Name :")
-                    age = int(input("Enter Employee Age :"))
-                    salary = int(input("Enter Employee Salary :"))
-                    self.EmployeeManager.add_employee(name=name, age=age, salary=salary)
+                    name = input("Enter Employee Name:")
+                    age = int(input("Enter Employee Age:"))
+                    salary = int(input("Enter Employee Salary:"))
+                    result = self.EmployeeManager.add_employee(name=name, age=age, salary=salary)
+                    print(result)
                 case 2:
                     result = self.EmployeeManager.get_employees()
                     print(result)
                 case 3:
-                    pass
+                    name = input("Enter Employee name: ")
+                    result = self.EmployeeManager.get_one_employee(name)
+                    print(result)
                 case 4:
-                    pass
+                    name = input("Enter Employee name: ")
+                    new_salary = int(input("Enter Employee new_salary: "))
+                    result = self.EmployeeManager.update_salary(name=name, new_salary=new_salary)
+                    print(result)
                 case 5:
-                    pass
+                    name = input("Enter Employee name: ")
+                    result = self.EmployeeManager.delete_employee(name=name)
+                    print(result)
                 case 6:
                     break
                 # end

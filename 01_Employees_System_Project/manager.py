@@ -38,8 +38,18 @@ class EmployeeManager:
         # if filter_by is None
         return [emp for emp in self.employees]
 
+
+    def get_one_employee(self, name):
+        for emp in self.employees:
+            if emp["name"] == name:
+                return emp
+            
+        return []
+    
     # update employee salary by name filter
-    def update_employee_salary(self, name, new_salary):
+    def update_salary(self, name, new_salary):
+        # is_empty??
+        
         for emp in self.employees:
             if emp["name"] == name:
                 emp["salary"] = int(new_salary)
@@ -50,7 +60,7 @@ class EmployeeManager:
     def delete_employee(self, name):
         for emp in self.employees:
             if emp["name"] == name:
-                del emp
+                self.employees.remove(emp)
                 return f"Employee {name} deleted"
 
         return f"Employee {name} not found"
