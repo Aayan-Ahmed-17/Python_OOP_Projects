@@ -117,11 +117,14 @@ Follow the on-screen prompts to:
 - `input_str_val()`: Validates and accepts string input (used for employee names)
 - `input_int_val(msg)`: Validates and accepts integer input (used for age and salary)
 - `show_result_list(result_list)`: Displays employee records in a formatted manner
-- [ ] Implement SQLite database integration
+
+### Future Goals
+  
+- [ ] Implement database integration
 - [ ] Add department management functionality
 - [ ] Create reporting and analytics features
-- [ ] Build a GUI using Tkinter or PyQt
-- [ ] Add unit tests using pytest
+- [ ] Build a GUI
+- [ ] Add unit tests
 - [ ] Implement logging functionality
 - [ ] Create user authentication system
 - [ ] Export reports to PDF/Excel formats
